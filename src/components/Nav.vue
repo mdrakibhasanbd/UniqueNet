@@ -284,7 +284,7 @@
                     </svg>
                 </a> -->
                 <a
-                    class="btn font-medium text-gray-100 bg-transparent  whitespace-nowrap hover:bg-red-600 hover:text-white rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition duration-500 focus:outline-none  max-[1024px]:hidden">Sign
+                    class="btn btn-sm font-medium text-gray-100 bg-transparent  whitespace-nowrap hover:bg-red-600 hover:text-white rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition duration-500 focus:outline-none  max-[1024px]:hidden">Sign
                     In</a>
             </div>
 
