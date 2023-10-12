@@ -1,12 +1,9 @@
 <template>
     <Nav />
     <div class="banner" :style="{ backgroundImage: `url(${backgroundImage})` }">
-
-
         <!-- Banner content -->
         <div class="content active">
-            <img :src="getLogoSrc(currentSlide)" class="movie-title">
-
+            <img :src="getLogoSrc(currentSlide)" class="movie-title max-[500px]:mb-[15px]" />
 
             <h4>
                 <span>2023</span>
@@ -14,60 +11,55 @@
                 <span>2h 14min</span>
                 <span>Romance</span>
             </h4>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam vitae unde voluptatibus? Distinctio
-                consectetur cum quae architecto possimus earum suscipit expedita dolorem, quos voluptatibus itaque
-                enim
-                hic laudantium aliquid sed eum ratione veritatis, in, necessitatibus quaerat voluptates rem sit vel
-                a.
-                Inventore, temporibus eaque. Dolorem error corporis iste? Amet, ab.</p>
-            <div class="button">
-                <a href="#"><i class="fa fa-play" aria-hidden="true"></i> Watch</a>
-                <a href="#"><i class="fa fa-plus" aria-hidden="true"></i> My List</a>
+            <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam vitae
+                unde voluptatibus? Distinctio consectetur cum quae architecto possimus
+                earum suscipit expedita dolorem, quos voluptatibus itaque enim hic
+                laudantium aliquid sed eum ratione veritatis, in, necessitatibus quaerat
+                voluptates rem sit vel a. Inventore, temporibus eaque. Dolorem error
+                corporis iste? Amet, ab.
+            </p>
+            <div class="">
+                <!-- <a href="#"><i class="fa fa-play" aria-hidden="true"></i> Watch</a> -->
+                <a
+                    class="btn font-medium text-gray-100 bg-transparent whitespace-nowrap hover:bg-red-600 hover:text-white rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition duration-500 focus:outline-none max-[1024px]:hidden">Watch</a>
             </div>
         </div>
 
         <!-- Main Carousel -->
-        <div class="py-3 w-1/2">
+        <div class="py-3 max-[500px]:hidden w-1/2">
             <div class="carousel-box">
-                <Carousel v-bind="settings" :autoplay="3000" :wrapAround="true" :breakpoints="breakpoints" :transition="500"
+                <Carousel v-bind="settings" :autoplay="5000" :wrapAround="true" :breakpoints="breakpoints" :transition="500"
                     v-model="currentSlide">
                     <Slide v-for="(item, index) in carouselItems" :key="index">
-                        <img :src="item.src" alt="" class="carousel__item mt-10 mb-10 rounded-2xl">
+                        <img :src="item.src" alt="" class="carousel__item mt-10 mb-10 rounded-2xl" />
                     </Slide>
                 </Carousel>
             </div>
-
-
         </div>
-
-
     </div>
 </template>
-  
+
 <script>
-import { defineComponent } from 'vue'
-import { Carousel, Slide } from 'vue3-carousel'
-import Nav from './Nav.vue'
-import 'vue3-carousel/dist/carousel.css'
+import { defineComponent } from "vue";
+import { Carousel, Slide } from "vue3-carousel";
+import Nav from "./Nav.vue";
+import "vue3-carousel/dist/carousel.css";
 
 export default defineComponent({
-    name: 'Gallery',
+    name: "Gallery",
     components: {
         Carousel,
         Slide,
         Nav,
-
     },
-
-
-
 
     data() {
         return {
             movieTitle: "Carousel",
             settings: {
                 itemsToShow: 2.55,
-                snapAlign: 'center',
+                snapAlign: "center",
             },
             // breakpoints are mobile first
             // any settings not specified will fallback to the carousel settings
@@ -75,51 +67,46 @@ export default defineComponent({
                 // 700px and up
                 500: {
                     itemsToShow: 2.55,
-                    snapAlign: 'center',
+                    snapAlign: "center",
                     // style:"width: 200px; height: 300px;"
-
                 },
                 // 1024 and up
                 1024: {
                     itemsToShow: 2.55,
-                    snapAlign: 'center',
+                    snapAlign: "center",
                 },
                 1350: {
                     itemsToShow: 2.55,
-                    snapAlign: 'center',
+                    snapAlign: "center",
                 },
             },
             carouselItems: [
-                { src: '/image/5gzzkR7y3hnY8AD1wXjCnVlHba5.jpg' },
-                { src: '/image/8Im6DknDVxRiGXc5t8rVOJyzuNx.jpg' },
-                { src: '/image/52YBwGJ3cJs54fpBzwnT1lnqgTo.jpg' },
-                { src: '/image/b0Ej6fnXAP8fK75hlyi2jKqdhHz.jpg' },
-                { src: '/image/h6Z2oogE4mJk2uffdtIlLhb0EHx.jpg' },
-                { src: '/image/voHUmluYmKyleFkTu3lOXQG702u.jpg' },
+                { src: "/image/5gzzkR7y3hnY8AD1wXjCnVlHba5.jpg" },
+                { src: "/image/8Im6DknDVxRiGXc5t8rVOJyzuNx.jpg" },
+                { src: "/image/52YBwGJ3cJs54fpBzwnT1lnqgTo.jpg" },
+                { src: "/image/b0Ej6fnXAP8fK75hlyi2jKqdhHz.jpg" },
+                { src: "/image/h6Z2oogE4mJk2uffdtIlLhb0EHx.jpg" },
+                { src: "/image/voHUmluYmKyleFkTu3lOXQG702u.jpg" },
             ],
             backdropImage: [
-                { src: '/backdrop/53z2fXEKfnNg2uSOPss2unPBGX1.jpg' },
-                { src: '/backdrop/mzlZAMjE2yk2sW3f9HTeBM3B3jw.jpg' },
-                { src: '/backdrop/qjMDwBWbG5hAP43q3meplZFreFQ.jpg' },
-                { src: '/backdrop/lNxR7SmtFxFUfA7n9qtzuaIYvoM.jpg' },
-                { src: '/backdrop/dovlWfwsmdfEg8CJqCfA6MpN7ws.jpg' },
-                { src: '/backdrop/Afp8OhiO0Ajb3NPoCBvfu2pqaeO.jpg' },
-
-
-            ], logo: [
-                { src: '/logo/k8RauXaOjYiO7UNTFpAWgkTV4tD.png' },
-                { src: '/logo/th3ju1FzqfZV6ePXR6CM7P72LLS.png' },
-                { src: '/logo/gO6Gouo9N2eoSwFJARI8HqYKaum.png' },
-                { src: '/logo/pX0jtutyXGF5EzluOJ6F6zPvFM.png' },
-                { src: '/logo/1JrVoNHy7VTJCKV60sDJGCcBL1H.png' },
-                { src: '/logo/zzjG9U2fDOiHudgqUysbKW58hLp.png' },
-
-
+                { src: "/backdrop/53z2fXEKfnNg2uSOPss2unPBGX1.jpg" },
+                { src: "/backdrop/mzlZAMjE2yk2sW3f9HTeBM3B3jw.jpg" },
+                { src: "/backdrop/qjMDwBWbG5hAP43q3meplZFreFQ.jpg" },
+                { src: "/backdrop/lNxR7SmtFxFUfA7n9qtzuaIYvoM.jpg" },
+                { src: "/backdrop/dovlWfwsmdfEg8CJqCfA6MpN7ws.jpg" },
+                { src: "/backdrop/Afp8OhiO0Ajb3NPoCBvfu2pqaeO.jpg" },
+            ],
+            logo: [
+                { src: "/logo/k8RauXaOjYiO7UNTFpAWgkTV4tD.png" },
+                { src: "/logo/th3ju1FzqfZV6ePXR6CM7P72LLS.png" },
+                { src: "/logo/gO6Gouo9N2eoSwFJARI8HqYKaum.png" },
+                { src: "/logo/pX0jtutyXGF5EzluOJ6F6zPvFM.png" },
+                { src: "/logo/1JrVoNHy7VTJCKV60sDJGCcBL1H.png" },
+                { src: "/logo/zzjG9U2fDOiHudgqUysbKW58hLp.png" },
             ],
             currentSlide: 0,
-            backgroundImage: '/backdrop/53z2fXEKfnNg2uSOPss2unPBGX1.jpg', // Initialize with an empty string
-
-        }
+            backgroundImage: "/backdrop/53z2fXEKfnNg2uSOPss2unPBGX1.jpg", // Initialize with an empty string
+        };
     },
     watch: {
         currentSlide(newSlide) {
@@ -131,11 +118,10 @@ export default defineComponent({
 
                 console.log(this.backgroundImage);
             } else {
-                this.backgroundImage = ''; // Reset to empty if no valid image is found
+                this.backgroundImage = ""; // Reset to empty if no valid image is found
             }
         },
     },
-
 
     methods: {
         getLogoSrc(index) {
@@ -144,17 +130,18 @@ export default defineComponent({
                 return this.logo[index].src;
             }
             // Return a default logo or empty string if index is out of bounds
-            return '';
+            return "";
         },
     },
     mounted() {
         // console.log('mounted');
     },
-},
-)
+});
 </script>
 
-<style >
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&family=Young+Serif&display=swap");
+
 .carousel__item {
     min-height: 200px;
     width: 100%;
@@ -229,7 +216,7 @@ export default defineComponent({
     right: 0;
     bottom: 0;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     background: rgba(0, 0, 0, 0.5);
 }
 
@@ -286,6 +273,7 @@ export default defineComponent({
     line-height: 1.5em;
     color: #ffffff;
     margin: 10px 0 20px;
+    font-family: "";
 }
 
 .banner .content .button {
@@ -321,16 +309,15 @@ export default defineComponent({
     min-width: 300px;
     margin-top: 20%;
     display: flex;
-    justify-content:right;
+    justify-content: right;
     align-items: center;
     /* background: rgba(0, 0, 0, 0.2); */
-
 }
 
 .carousel {
     position: relative;
     width: 85%;
-    height:450px;
+    height: 450px;
 }
 
 .carousel .carousel-item {
@@ -346,8 +333,6 @@ export default defineComponent({
     object-fit: cover;
     object-position: center;
 }
-
-
 
 .play {
     position: absolute;
@@ -437,5 +422,3 @@ export default defineComponent({
     max-width: 30px;
 }
 </style>
-
-
