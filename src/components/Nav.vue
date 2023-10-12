@@ -275,17 +275,17 @@
                         </path>
                     </svg>
                 </a> -->
-                <a href="" class=" max-[1024px]:hidden">
+                <!-- <a href="" class=" max-[1024px]:hidden">
                     <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 24 24"
                         style="fill: rgba(255, 0, 0, 1);transform: ;msFilter:;">
                         <path
                             d="M12 3c-4.625 0-8.442 3.507-8.941 8.001H10v-3l5 4-5 4v-3H3.06C3.56 17.494 7.376 21 12 21c4.963 0 9-4.037 9-9s-4.037-9-9-9z">
                         </path>
                     </svg>
-                </a>
-                <!-- <a
-                    class="btn font-medium text-gray-100 bg-red-500  whitespace-nowrap hover:bg-red-600 hover:text-white rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition duration-500 focus:outline-none  max-[1024px]:hidden">Sign
-                    In</a> -->
+                </a> -->
+                <a
+                    class="btn font-medium text-gray-100 bg-transparent  whitespace-nowrap hover:bg-red-600 hover:text-white rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition duration-500 focus:outline-none  max-[1024px]:hidden">Sign
+                    In</a>
             </div>
 
             <!-- </div> -->
